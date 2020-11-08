@@ -3,8 +3,8 @@
 export LIST_LIB_OUTPUT_FILEPATH = ./libs/list.a
 BIN_PATH = ./bin
 
-LINUX_CXX               = gcc
-LINUX_CFLAGS            = -Wall
+CXX               = gcc
+CFLAGS            = -Wall
 
 SOURCES  = ./src/main.c
 INCLUDES = ../include
@@ -14,7 +14,7 @@ include ../Makefile
 
 default : build_list
 	mkdir -p $(BIN_PATH);
-	$(LINUX_CXX) -I$(INCLUDES) $(LINUX_CFLAGS) -o $(BIN_PATH)/test $(SOURCES) $(LIBS);
+	$(CXX) -I$(INCLUDES) $(CFLAGS) -o $(BIN_PATH)/test $(SOURCES) $(LIBS);
 
 clean : clean_list
 	rm -rf $(BIN_PATH);
